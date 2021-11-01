@@ -4,4 +4,5 @@
 | --------------------------------------------------------------------------- | --------------------------- |
 |Chalange Name            | Chalange Link           |
 |  Reverse an array.       |  [Reverse an array](reverse-an-array/README.md)          |
+|  array-insert-shift.       |  [array-insert-shift](array-insert-shift/README.md)          |
 
