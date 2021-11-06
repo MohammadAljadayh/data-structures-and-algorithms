@@ -3,20 +3,22 @@
 
 const LinkedList = require('./lib/LinkedList');
 
+let linkedList=new LinkedList()
+console.log("Value Inserted to linked list 1,2,3");
+linkedList.insert(1);
+linkedList.insert(2);
+linkedList.insert(3);
+
+console.log("Value sherched if it is on linked list sherched for 3 ");
+let checkIncloud =linkedList.includes(3);
+console.log(checkIncloud);
+console.log("Linked List Details");
+
+console.log(linkedList);
+console.log("Linked List Data Values");
+console.log(linkedList.tostring());
 
 
-const ll = new LinkedList(); 
 
-ll.append(1);
-ll.append(2);
-ll.append(3);
-ll.append(4);
-ll.append(5);
-ll.append(6);
-ll.append(7);
-ll.append(8);
-ll.append(9);
-ll.append(10);
-ll.append(11);
 
-console.log(ll);
+
