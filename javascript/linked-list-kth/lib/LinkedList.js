@@ -1,15 +1,24 @@
-'use strict'
-const Node=require('./Node')
+const Node = require("./Node");
 
-class Linkedlist {
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
 
-    constructor() {
-      this.tail = null;
-      this.head = null;
-      this.size = 0
+  insert(value) {
+    let newNode = new Node(value);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      this.tail = newNode;
+      this.tail.next = newNode;
     }
-  
-  
+    this.length++;
+    return this.head;
+  }
   append(value) {
     let newNode = new Node(value);
     if (!this.head) {
@@ -21,31 +30,11 @@ class Linkedlist {
       }
       currentNode.next = newNode;
     }
-    this.size += 1
+    this.length++;
   }
-
-  kthFromEnd(k){
-    let currentNode=this.head;
-    let count=this.size-1;
-    while(currentNode){
-      if (k>=0) {
-      if(k===count){
-        return currentNode.value;
-      }
-      if (Math.floor(count / k) === 2) {
-        return 'Happy Path';
-    }
-      count--;
-      currentNode=currentNode.next;
-    }
-    else { return 'K is Not Positive number';}
-    return 'Exception';
-  }
-}
-
-
   
-  tostring() {
+  tostring()
+  {
     let current = this.head;
     let str="";
     while (current!==null) {
@@ -54,11 +43,26 @@ class Linkedlist {
     }
     str=str+'NULL';
     return str;   
-}    
+} 
+
   
+kthFromEnd(k)
+{
+  let currentNode=this.head;
+  if (!this.head){return null}
+  if (k>this.length){ return('erorr k is greater than the length of the linked list')}
+  if (k==this.length){ return('erorr k and the length of the list are the same')}
+  if (k<0){ return('erorr k is not a positive integer')}
+  
+ if (k==this.length-1){return this.head.value}
+  for (let i=this.length-1;i>k;i--){
+  currentNode=currentNode.next;
+  }
+  return currentNode.value;
+
 }
 
-module.exports=Linkedlist
 
-
+}
+  module.exports=LinkedList;
 

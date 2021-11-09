@@ -7,68 +7,63 @@ describe("LinkedList", () => {
     let newList = new LinkedList();
     expect(newList.head).toBeNull();
     expect(newList.tail).toBeNull();
-    expect(newList.size).toEqual(0);
+    expect(newList.length).toEqual(0);
   });
 
-  // it("insert one node ", () => {
-  //   let newList = new LinkedList();
-  //   newList.append(1);
-  //   expect(newList.head.value).toEqual(1);
-  //   expect(newList.head.next).toBeNull();
-  // });
-  // it("insert  many node", () => {
-  //   let newList = new LinkedList();
-  //   newList.append(2);
-  //   newList.append(3);
-  //   expect(newList.head.value).toEqual(2);
-  //   expect(newList.head.next.value).toEqual(3);
-  // });
 
   it('Where k is greater than the length of the linked list', () => {
     let newList = new LinkedList();
-    newList.append(1);
+    newList.insert(1);
     newList.append(2);
     newList.append(3);
     newList.append(4);
     newList.append(5);
-    expect(newList.kthFromEnd(10)).toEqual('Exception');
+    expect(newList.kthFromEnd(10)).toEqual('erorr k is greater than the length of the linked list');
   });
 
   it('Where k and the length of the list are the same', () => {
     let newList = new LinkedList();
-    newList.append(1);
+    newList.insert(1);
     newList.append(2);
     newList.append(3);
     newList.append(4);
     newList.append(5);
-    expect(newList.kthFromEnd(5)).toEqual('Exception');
+    expect(newList.kthFromEnd(4)).toEqual(1);
+    expect(newList.kthFromEnd(5)).toEqual('erorr k and the length of the list are the same');
   });
 
-  it('Where k is not a positive integer', () => {
+  it('erorr k is not a positive integer', () => {
     let newList = new LinkedList();
-    newList.append(1);
+    newList.insert(1);
     newList.append(2);
     newList.append(3);
     newList.append(4);
     newList.append(5);
-    expect(newList.kthFromEnd(-2)).toEqual('K is Not Positive number');
+    expect(newList.kthFromEnd(-2)).toEqual('erorr k is not a positive integer');
 });
 it('Where the linked list is of a size 1', () => {
   let newList = new LinkedList();
-  newList.append(1);
+  newList.insert(1);
   expect(newList.kthFromEnd(0)).toEqual(1);
-  expect(newList.kthFromEnd(1)).toEqual('Exception');
 });
 
 it('“Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
   let newList = new LinkedList();
-    newList.append(1);
+    newList.insert(1);
     newList.append(2);
     newList.append(3);
     newList.append(4);
     newList.append(5);
     newList.append(6);
     newList.append(7);
-  expect(newList.kthFromEnd(3)).toEqual('Happy Path');
+
+  expect(newList.kthFromEnd(1)).toEqual(6);
+  expect(newList.kthFromEnd(2)).toEqual(5);
+  expect(newList.kthFromEnd(3)).toEqual(4);
+  expect(newList.kthFromEnd(4)).toEqual(3);
+  expect(newList.kthFromEnd(5)).toEqual(2);
+  expect(newList.kthFromEnd(6)).toEqual(1);
+ 
+
 });
 })
