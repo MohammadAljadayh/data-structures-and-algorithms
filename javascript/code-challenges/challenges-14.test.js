@@ -209,62 +209,6 @@ describe('Testing challenge 2', () => {
   });
 });
 
-describe('Testing challenge 3', () => {
-  test('It should return only characters that are bigger than Luke', () => {
-    expect(biggerThanLuke(starWarsData)).toStrictEqual('Darth Vader - Pex Kylar');
-    expect(biggerThanLuke([])).toStrictEqual('');
-  });
-});
 
-describe('Testing challenge 4', () => {
-  test('It should sort items by a price', () => {
 
-    expect(sortBy('price', [
-      { name: 'Sweatshirt', price: 45 },
-      { name: 'Bookmark', price: 2.50 },
-      { name: 'Tote bag', price: 15 }
-    ])).toStrictEqual([
-      { name: 'Bookmark', price: 2.50 },
-      { name: 'Tote bag', price: 15 },
-      { name: 'Sweatshirt', price: 45 },
-    ]);
 
-  });
-
-  test('It should sort items by name', () => {
-
-    expect(sortBy('name', [
-      { name: 'Sweatshirt', price: 45 },
-      { name: 'Bookmark', price: 2.50 },
-      { name: 'Tote bag', price: 15 }
-    ])).toStrictEqual([
-      { name: 'Bookmark', price: 2.50 },
-      { name: 'Sweatshirt', price: 45 },
-      { name: 'Tote bag', price: 15 },
-    ]);
-  });
-});
-
-describe('Testing challenge 5', () => {
-  test('It should check if url is https', () => {
-
-    expect(isSecure('http://www.insecure.com')).toBe(false);
-    expect(isSecure('https://secure.com')).toBe(true);
-    expect(isSecure('https:/missingslash.org')).toBe(false);
-  });
-});
-
-describe('Testing challenge 6', () => {
-  test('It should return true if there are three in a row', () => {
-    expect(detectTicTacToeWin([['X', '', 'O'], ['X', 'O', ''], ['X', 'O', 'X']])).toStrictEqual(true);
-    expect(detectTicTacToeWin([['O', '', 'X'], ['X', 'O', 'X'], ['X', '', 'O']])).toStrictEqual(true);
-  });
-
-  test('It should return false if there are not three in a row', () => {
-    expect(detectTicTacToeWin([['X', '', 'O'], ['O', 'O', ''], ['X', 'O', 'X']])).toStrictEqual(false);
-  });
-
-  test('It should not treat empty 3 in row as winner', () => {
-    expect(detectTicTacToeWin([['', '', ''], ['O', 'O', ''], ['X', 'O', 'X']])).toEqual(false);
-  });
-});

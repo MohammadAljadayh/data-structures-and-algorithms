@@ -52,6 +52,4 @@ linkedList.insert(3)
         expect(linkedList.tostring()).toBe('{3}->{2}->{1}->NULL')
     })
 
-
-  
 })
