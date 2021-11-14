@@ -11,7 +11,7 @@ class PseudoQueue {
     enqueue(value) {
         this.pushStack.push(value);
         return this.pushStack.peek();
-    }
+    }S
 
     dequeue() {
 

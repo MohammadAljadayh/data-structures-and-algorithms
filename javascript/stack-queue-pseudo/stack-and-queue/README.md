@@ -8,12 +8,13 @@ first item enter
 
 ## Whiteboard Process
 
- > Whiteboard  Queue Using Tow Stack
+ > Whiteboard stackandqueue {
+
  
 ![](stackandqueue.PNG)
 
 ## Approach & Efficiency : 
-- create PseudoQueue class has tow Stack i
+- create PseudoQueue class has tow Stack iS
 tem  one for push the other one for pop
 - enqueue method : push to the queue 
 - dequeu method : delete from the queue

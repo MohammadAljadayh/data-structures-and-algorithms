@@ -33,14 +33,6 @@ describe("LinkedList", () => {
     expect(newList.head.value).toEqual(1);
     expect(newList.head.next.value).toEqual(5);
   });
-  it("insertAfter node", () => {
-    let newList = new LinkedList();
-    newList.append(1);
-    newList.append(2);
-    newList.append(3);
-    newList.insertAfter(1, 4);
-    expect(newList.head.value).toEqual(1);
-    expect(newList.head.next.value).toEqual(4);
-  });
+
 
 })
