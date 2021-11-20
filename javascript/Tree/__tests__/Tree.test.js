@@ -2,11 +2,11 @@
 'use strict';
 const BinaryTree = require('../BinaryTree');
 const Node = require('../lib/Node');
+const BinarySearchTree=require('../binarySearchTree')
 
 let tree = null;
 describe('Binary Tree', () => {
     const BT = new BinaryTree();
-
     BT.root = new Node(1, new Node(4, new Node(7), new Node(2)), new Node(3, new Node(9), new Node(6)));
 
     it('Can successfully instantiate an empty tree', () => {
@@ -19,15 +19,6 @@ describe('Binary Tree', () => {
         const BT = new BinaryTree();
         BT.root = new Node(1);
         expect(BT.root.value).toEqual(1);
-    });
-
-    it('Can successfully add a left child and right child to a single root node', () => {
-      
-        const BT = new BinaryTree();
-        BT.root = new Node(1,new Node(4,new Node(7)));
-        expect(BT.root.value).toEqual(1);
-        expect(BT.root.left.value).toEqual(4);
-        // expect(BT.root.right.value).toEqual(7);
     });
 
     it('Can successfully return a collection from a preorder traversa', () => {
@@ -48,4 +39,14 @@ describe('Binary Tree', () => {
         expect(postOrder).toEqual(expectedOutput);
     });
 
+    it('Can successfully add a left child and right child to a single root node', () => {
+      
+        const BinarySearch=new BinarySearchTree();
+        BinarySearch.add(15);
+        BinarySearch.add(10);
+        BinarySearch.add(25);
+        expect(BinarySearch.root.value).toEqual(15);
+        expect(BinarySearch.root.right.value).toEqual(25);
+        expect(BinarySearch.root.left.value).toEqual(10);
+    });
 });

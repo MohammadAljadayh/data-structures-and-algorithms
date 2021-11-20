@@ -7,20 +7,19 @@ class BinaryTree {
     this.root = root;
   }
 
-  /**
-   * Pre-Oder
-   *  Read -> Left -> Right
-   */
+
+//  Read -> Left -> Right
+
 
   PreOrder() {
     let arrayOfReadNodes = [];
 
     const _walk = (node) => {
-      // read
+
       arrayOfReadNodes.push(node.value);
-      // check left
+  
       if (node.left) { _walk(node.left) }
-      // check right
+ 
       if (node.right) { _walk(node.right) }
     }
 
@@ -28,19 +27,18 @@ class BinaryTree {
     return arrayOfReadNodes;
   }
 
-  /**
-   * 
-   * Post-Order: Left -> Right -> Read
-   */
+  
+  //  * Post-Order: Left -> Right -> Read
+
   PostOrder() {
     let arrayOfReadNodes = [];
 
     const _walk = (node) => {
-      // check left
+
       if (node.left) { _walk(node.left) }
-      // check right
+
       if (node.right) { _walk(node.right) }
-      // read
+  
       arrayOfReadNodes.push(node.value);
     }
 
@@ -48,19 +46,18 @@ class BinaryTree {
     return arrayOfReadNodes;
   }
 
-  /**
-   * 
-   * In Order: : left -> Read -> Right
-   */
+
+  //  * In Order: : left -> Read -> Right
+
   InOrder() {
     let arrayOfReadNodes = [];
 
     const _walk = (node) => {
-      // check left
+  
       if (node.left) { _walk(node.left) }
-      // read
+    
       arrayOfReadNodes.push(node.value);
-      // check right
+
       if (node.right) { _walk(node.right) }
     }
 

@@ -2,6 +2,7 @@
 
 const BinaryTree = require('./BinaryTree');
 const Node = require('./lib/Node');
+const BinarySearchTree=require('./binarySearchTree')
 
 const BT = new BinaryTree();
 
@@ -12,6 +13,16 @@ console.log(BT.PostOrder());
 console.log(BT.InOrder());
 
 
+
+const BinarySearch=new BinarySearchTree();
+BinarySearch.add(15);
+BinarySearch.add(10);
+BinarySearch.add(20);
+BinarySearch.add(30);
+BinarySearch.add(40);
+console.log(BinarySearch);
+console.log(BinarySearch.contains(40));
+console.log(BinarySearch.contains(50));
 
 
 
